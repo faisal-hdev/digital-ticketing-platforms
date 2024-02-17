@@ -3,7 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Google fonts link -->
+    <!-- Google fonts inter and Raleway link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -20,6 +26,10 @@
     <style>
       .railway {
         font-family: "Raleway", sans-serif;
+      }
+
+      .inter {
+        font-family: "Inter", sans-serif;
       }
     </style>
     <title>Digital t system</title>
@@ -94,7 +104,7 @@
 
     <main>
       <!-- Banner section -->
-      <div class="container mx-auto mt-10">
+      <section class="container mx-auto py-10">
         <div
           class="hero h-[580px] rounded-3xl"
           style="background-image: url(./images/banner.png)"
@@ -125,7 +135,62 @@
             </div>
           </div>
         </div>
-      </div>
+      </section>
+
+      <!-- Best offers for you section -->
+      <section class="container mx-auto py-14">
+        <h2 class="text-center max-sm:text-2xl md:text-4xl font-medium mb-10">
+          Best offers for you
+        </h2>
+        <div class="flex flex-col w-full lg:flex-row">
+          <div class="grid flex-grow h-[260px] card bg-yellow-400 rounded-box">
+            <div class="flex justify-evenly items-center">
+              <div class="space-y-3">
+                <h2 class="text-4xl font-bold inter">15% OFF</h2>
+                <p class="font-bold">on your next purchase</p>
+                <p>use by January 2024</p>
+              </div>
+              <div class="space-y-3">
+                <img
+                  class="text-white h-[260px]"
+                  src="./images/cupon-devider.png"
+                  alt=""
+                />
+              </div>
+              <div class="space-y-3">
+                <h2 class="text-4xl font-bold">NEW15</h2>
+                <p>Coupon Code</p>
+              </div>
+            </div>
+          </div>
+          <div class="divider lg:divider-horizontal"></div>
+          <div class="grid flex-grow h-[260px] card bg-[#f38192] rounded-box">
+            <div class="flex justify-evenly items-center">
+              <div class="space-y-3">
+                <h2 class="text-4xl font-bold inter">15% OFF</h2>
+                <p class="font-bold">on your next purchase</p>
+                <p>use by January 2024</p>
+              </div>
+              <div class="space-y-3">
+                <img
+                  class="text-white h-[260px]"
+                  src="./images/cupon-devider.png"
+                  alt=""
+                />
+              </div>
+              <div class="space-y-3">
+                <h2 class="text-4xl font-bold">CPL20</h2>
+                <p>Coupon Code</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button
+          class="btn btn-outline btn-success flex mx-auto mt-10 btn-xs sm:btn-sm md:btn-md lg:btn-lg"
+        >
+          See All Offers
+        </button>
+      </section>
     </main>
   </body>
 </html>
