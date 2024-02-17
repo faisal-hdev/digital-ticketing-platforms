@@ -3,6 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Google fonts link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <!-- Tailwind and daisy cdn link -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link
@@ -10,9 +17,14 @@
       rel="stylesheet"
       type="text/css"
     />
+    <style>
+      .railway {
+        font-family: "Raleway", sans-serif;
+      }
+    </style>
     <title>Digital t system</title>
   </head>
-  <body>
+  <body class="railway">
     <!-- Header  -->
     <header class="container mx-auto">
       <div class="navbar bg-green-100 rounded-full mt-12">
@@ -72,12 +84,48 @@
         <div class="navbar-end max-sm:mr-[0px] mr-[8px]">
           <a
             style="border: 1px solid green"
-            class="btn rounded-full text-green-600 border-2 text-xl font-normal max-sm:px-auto md:px-8"
+            class="btn rounded-full text-green-500 border-2 text-xl font-medium max-sm:px-auto md:px-8"
             >Bus
             <img src="./images/bus-icon.png" alt="" />
           </a>
         </div>
       </div>
     </header>
+
+    <main>
+      <!-- Banner section -->
+      <div class="container mx-auto mt-10">
+        <div
+          class="hero h-[580px] rounded-3xl"
+          style="background-image: url(./images/banner.png)"
+        >
+          <div class="hero-overlay bg-opacity-5 rounded-3xl"></div>
+          <div class="hero-content text-center text-neutral-content">
+            <div class="text-white">
+              <h1 class="mb-5 max-sm:text-3xl md:text-6xl font-bold">
+                End-to-End Travel with
+              </h1>
+              <span
+                class="mb-5 text-[#84cc16] max-sm:text-3xl md:text-5xl font-bold"
+                >Digital System</span
+              >
+              <p class="my-5 max-sm:w-auto md:w-[660px]">
+                "Embark on an unforgettable adventure with our premium bus
+                tours. Immerse yourself in scenic landscapes, rich history, and
+                expert-guided experiences. Discover the joy of travel with
+                comfort and style."
+              </p>
+              <button class="">
+                <a
+                  href="#"
+                  class="px-10 btn max-sm:text-lg md:btn-lg rounded-full border-0 bg-[#84cc16] duration-1000 text-black text-xl font-medium"
+                  >Buy Tickets
+                </a>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
   </body>
 </html>
