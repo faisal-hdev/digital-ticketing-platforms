@@ -2,12 +2,16 @@ const allSeatsBtn = document.getElementsByClassName("seat-add");
 
 let count = 0;
 let totalPrice = 0;
-let grandTotal = 0;
 for (const singleSeatBtn of allSeatsBtn) {
   singleSeatBtn.addEventListener("click", function (event) {
+    if (count >= 4) {
+      return alert("You have already selected four seat. you can't add more");
+    }
+
     const seatEl = event.target;
     seatEl.classList.remove("bg-[#F7F8F8]");
     seatEl.classList.add("bg-[#1DD100]");
+    seatEl.classList.add("text-white");
 
     const seatLeftEl = getElementTextById("seat-left");
     const leftValue = seatLeftEl - 1;
@@ -55,4 +59,26 @@ function getElementTextById(elementId) {
 
 function setInnerText(elementId, value) {
   document.getElementById(elementId).innerText = value;
+}
+
+function grandTotal() {
+  const applyBtnEl = document.getElementById("apply-btn");
+  const couponInput = document.getElementById("coupon-input").value;
+
+  const gradTotalCost = getElementTextById("grand-total");
+  const convertGrandTotal = parseInt(gradTotalCost);
+
+  if (couponInput === "NEW15") {
+    const fiftyPercentDiscount = (convertGrandTotal * 15) / 100;
+    const discountedAmount = convertGrandTotal - fiftyPercentDiscount;
+    setInnerText("grand-total", discountedAmount);
+    applyBtnEl.setAttribute("disabled", true);
+  } else if (couponInput === "Couple 20") {
+    const towentyPercentDiscount = (convertGrandTotal * 20) / 100;
+    const discountedAmount = convertGrandTotal - towentyPercentDiscount;
+    setInnerText("grand-total", discountedAmount);
+    applyBtnEl.setAttribute("disabled", true);
+  } else {
+    return alert("Your coupon code is invalid. please try another coupon");
+  }
 }

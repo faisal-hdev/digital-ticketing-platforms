@@ -127,6 +127,7 @@
               </p>
               <button class="mt-5">
                 <a
+                  href="#main-section"
                   class="items-center border-2 duration-200 hover:bg-green-400 bg-[#84cc16] px-7 md:px-10 py-4 rounded-xl text-black text-xl font-medium"
                   >Buy Tickets
                 </a>
@@ -156,7 +157,7 @@
                 />
               </div>
               <div class="space-y-3">
-                <h2 class="text-2xl font-bold">NEW15</h2>
+                <h2 class="text-2xl font-bold" id="coupon-new">NEW15</h2>
                 <p>Coupon Code</p>
               </div>
             </div>
@@ -177,7 +178,7 @@
                 />
               </div>
               <div class="space-y-3">
-                <h2 class="text-2xl font-bold">Couple 20</h2>
+                <h2 class="text-2xl font-bold" id="coupon-cuuple">Couple 20</h2>
                 <p>Coupon Code</p>
               </div>
             </div>
@@ -191,6 +192,7 @@
       </section>
       <!-- Main layout start -->
       <section
+        id="main-section"
         style="border-top-left-radius: 80px; border-top-right-radius: 80px"
         class="bg-[#F7F8F8] border-green-400 border-t-2 py-20"
       >
@@ -579,11 +581,14 @@
                   <!-- copupon code -->
                   <div class="p-3 flex justify-between rounded-lg bg-white">
                     <input
+                      id="coupon-input"
                       class="pl-5 border focus:border-transparent rounded-sm"
                       type="text"
                       placeholder="Have any copupon?"
                     />
                     <button
+                      id="apply-btn"
+                      onclick="grandTotal()"
                       class="bg-[#1DD100] px-5 py-3 text-white rounded-lg hover:bg-green-500 duration-300"
                     >
                       Apply
