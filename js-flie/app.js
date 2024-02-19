@@ -1,7 +1,7 @@
 const allSeatsBtn = document.getElementsByClassName("seat-add");
-
 let count = 0;
 let totalPrice = 0;
+
 for (const singleSeatBtn of allSeatsBtn) {
   singleSeatBtn.addEventListener("click", function (event) {
     if (count >= 4) {
@@ -10,6 +10,7 @@ for (const singleSeatBtn of allSeatsBtn) {
       const seatEl = event.target;
       seatEl.classList.remove("bg-[#F7F8F8]");
       seatEl.classList.add("bg-[#1DD100]");
+      seatEl.classList.add("pointer-events-none");
       seatEl.classList.add("text-white");
 
       const seatLeftEl = getElementTextById("seat-left");
@@ -63,6 +64,7 @@ function setInnerText(elementId, value) {
 
 function grandTotal() {
   const applyBtnEl = document.getElementById("apply-btn");
+  const couponDivEl = document.getElementById("coupon-div");
   const couponInput = document.getElementById("coupon-input").value;
 
   const gradTotalCost = getElementTextById("grand-total");
@@ -73,13 +75,26 @@ function grandTotal() {
     const fiftyPercentDiscount = (convertGrandTotal * 15) / 100;
     const discountedAmount = convertGrandTotal - fiftyPercentDiscount;
     setInnerText("grand-total", discountedAmount);
-    applyBtnEl.setAttribute("disabled", true);
+    couponDivEl.classList.add("hidden");
   } else if (couponInput === "Couple 20") {
     const towentyPercentDiscount = (convertGrandTotal * 20) / 100;
     const discountedAmount = convertGrandTotal - towentyPercentDiscount;
     setInnerText("grand-total", discountedAmount);
-    applyBtnEl.setAttribute("disabled", true);
+    couponDivEl.classList.add("hidden");
   } else {
-    return alert("Your coupon code is invalid. please try another coupon");
+    return alert("Please fill up valid Coupon");
   }
 }
+
+const mainSectionLink = document.querySelector('a[href="#main-section"]');
+mainSectionLink.addEventListener("click", function (e) {
+  e.preventDefault();
+
+  const targetSection = document.getElementById("main-section");
+
+  if (targetSection) {
+    targetSection.scrollIntoView({
+      behavior: "smooth",
+    });
+  }
+});
