@@ -38,8 +38,7 @@ for (const singleSeatBtn of allSeatsBtn) {
       totalPrice = totalPrice + priceConvert;
       setInnerText("total-price", totalPrice);
 
-      const gTotalEl = (document.getElementById("grand-total").innerText =
-        totalPrice);
+      document.getElementById("grand-total").innerText = totalPrice;
 
       li.appendChild(p);
       li.appendChild(p2);
@@ -63,13 +62,10 @@ function setInnerText(elementId, value) {
 }
 
 function grandTotal() {
-  const applyBtnEl = document.getElementById("apply-btn");
   const couponDivEl = document.getElementById("coupon-div");
   const couponInput = document.getElementById("coupon-input").value;
-
   const gradTotalCost = getElementTextById("grand-total");
   const convertGrandTotal = parseInt(gradTotalCost);
-  couponInput.value = "";
 
   if (couponInput === "NEW15") {
     const fiftyPercentDiscount = (convertGrandTotal * 15) / 100;
